@@ -3,15 +3,24 @@ plugins {
     id "java"
     id "application"
     id "org.sonarqube" version "4.0.0.2929"
+    id "org.sonarqube"
 }
 
-description = 'Test-Sonar-Data'
+description = 'Org-K-Test_Test-Sonar-Data'
 version = '1.0'
 
 sonar {
-    properties {
-        property 'sonar.projectName', 'Test-Sonar-Data'
-    }
+plugins {
+  id "org.sonarqube" version "3.5.0.2730"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "Org-K-Test_Test-Sonar-Data"
+    property "sonar.organization", "org-k-test"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
 }
 
 // In this section you declare where to find the dependencies of your project
